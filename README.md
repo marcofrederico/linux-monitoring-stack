@@ -122,7 +122,7 @@ docker compose down -v
 Esse repositório faz parte do meu portfólio de estudos em Infraestrutura e DevOps. Trabalho como Analista de Infraestrutura e uso projetos como esse pra consolidar o que aprendo.
 
 **Marco Antonio Frederico**
-[LinkedIn](https://www.linkedin.com/in/marcofrederico) · [GitHub](https://github.com/marcofrederico)
+[LinkedIn](https://www.linkedin.com/in/mfrederico) · [GitHub](https://github.com/marcofrederico)
 
 ---
 
