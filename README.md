@@ -10,12 +10,12 @@ Inclui Prometheus, Grafana, Alertmanager e Node Exporter, com dashboards e alert
 
 ---
 
-## O que contém no projeto
+## O que tem aqui
 
-- Coleta de métricas do host Linux via Node Exporter.
-- Armazenamento e consulta com Prometheus.
-- Dashboards prontos no Grafana.
-- Regras de alerta para CPU, memória, disco e disponibilidade.
+- Coleta de métricas do host Linux via Node Exporter
+- Armazenamento e consulta com Prometheus
+- Dashboards prontos no Grafana
+- Regras de alerta para CPU, memória, disco e disponibilidade
 
 ![Arquitetura da stack](docs/architecture.png)
 
@@ -32,7 +32,7 @@ Inclui Prometheus, Grafana, Alertmanager e Node Exporter, com dashboards e alert
 ## Como subir
 
 ```bash
-git clone https://github.com/mfrederico/linux-monitoring-stack
+git clone https://github.com/marcofrederico/linux-monitoring-stack
 cd linux-monitoring-stack
 docker compose up -d
 ```
@@ -46,6 +46,22 @@ Pronto. Acessa no browser:
 | Alertmanager | http://localhost:9093 | — |
 
 > O Grafana vai pedir pra trocar a senha no primeiro acesso.
+
+---
+ 
+## Homepage
+ 
+![Homepage](docs/homepage.png)
+
+---
+
+## Dashboards
+
+| Dashboard | Fonte |
+|---|---|
+| Node Exporter Full | Comunidade — criado por [rfmoz](https://grafana.com/grafana/dashboards/1860) |
+
+![Dashboard](docs/dashboard.png)
 
 ---
 
@@ -67,6 +83,10 @@ linux-monitoring-stack/
 ├── docker-compose.yml
 ├── .gitignore
 ├── README.md
+├── docs/
+│   ├── architecture.png
+│   ├── homepage.png
+│   └── dashboard.png
 ├── prometheus/
 │   ├── prometheus.yml
 │   └── rules/
@@ -82,14 +102,27 @@ linux-monitoring-stack/
 └── alertmanager/
     └── alertmanager.yml
 ```
+
+---
+
+## Parar tudo
+
+```bash
+# só para
+docker compose down
+
+# para e apaga os dados
+docker compose down -v
+```
+
 ---
 
 ## Sobre o projeto
 
-Esse repositório faz parte do meu portfólio de estudos em Infraestrutura e DevOps. Trabalho como Analista de Infraestrutura e uso projetos como esse pra consolidar o que aprendo — Docker, observabilidade, automação e boas práticas de documentação.
+Esse repositório faz parte do meu portfólio de estudos em Infraestrutura e DevOps. Trabalho como Analista de Infraestrutura e uso projetos como esse pra consolidar o que aprendo.
 
 **Marco Antonio Frederico**
-[LinkedIn](https://www.linkedin.com/in/mfrederico) · [GitHub](https://github.com/mfrederico)
+[LinkedIn](https://www.linkedin.com/in/marcofrederico) · [GitHub](https://github.com/marcofrederico)
 
 ---
 
