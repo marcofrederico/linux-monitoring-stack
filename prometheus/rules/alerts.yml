@@ -1,0 +1,39 @@
+groups:
+  - name: host.rules
+    rules:
+
+      - alert: InstanceDown
+        expr: up == 0
+        for: 1m
+        labels:
+          severity: critical
+        annotations:
+          summary: "Host fora do ar"
+          description: "O host {{ $labels.instance }} está fora do ar há mais de 1 minuto."
+
+      - alert: HighCPUUsage
+        expr: 100 - (avg by(instance) (rate(node_cpu_seconds_total{mode="idle"}[5m])) * 100) > 80
+        for: 5m
+        labels:
+          severity: warning
+        annotations:
+          summary: "CPU alta"
+          description: "O host {{ $labels.instance }} está com CPU acima de 80% há mais de 5 minutos."
+
+      - alert: HighMemoryUsage
+        expr: (1 - (node_memory_MemAvailable_bytes / node_memory_MemTotal_bytes)) * 100 > 85
+        for: 5m
+        labels:
+          severity: warning
+        annotations:
+          summary: "Memória alta"
+          description: "O host {{ $labels.instance }} está com memória acima de 85%."
+
+      - alert: DiskSpaceLow
+        expr: (1 - (node_filesystem_avail_bytes{fstype!="tmpfs"} / node_filesystem_size_bytes{fstype!="tmpfs"})) * 100 > 90
+        for: 5m
+        labels:
+          severity: critical
+        annotations:
+          summary: "Disco cheio"
+          description: "O host {{ $labels.instance }} está com disco acima de 90%."
